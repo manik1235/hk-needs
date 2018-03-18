@@ -60,6 +60,9 @@ for (var i = 0; i < names.length; i++) {
 		}
 			
 	}
+	// Add the list footer
+	newListStructure += '</ol>'
+	newListStructure += '</p>'
 }
 	
 
