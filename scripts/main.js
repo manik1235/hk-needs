@@ -16,7 +16,12 @@ names[index_household] = 'Household';
 
 // This section will be to control the list items for each person.
 // array structure is [person#1, person#2]
-// then the sub arrays are ["Item Name", value, goal, completion-goal-date]
+// then the sub arrays are [["Item Name", value, goal, completion-goal-date], ]
+var index_itemName = 0;
+var index_value = 1;
+var index_goal = 2;
+var index_completionDate = 3;
+
 var items = [];
 items[index_traci] = [['Available', 80, null, null], ['Dresses', 0, 100, null], ['Spring Coat', 0, 60, null]];
 items[index_andrew] = [['Available', 80, null, null], ['Haircut', 0, 30, null], ['Dress Shirts', 0, 40, null], ['Ties', 0, 30, null]];
@@ -46,8 +51,17 @@ for (var i = 0; i < names.length; i++) {
 	newListStructure += '<ol>'
 	// Create the list items
 	for (var j = 0; j < items[i].length; j++) {
-		newListStructure += `<li class="available" id="traci.available">Available $${items[i][j]}</li>`
-		newListStructure += `<li>Spring Coat ($50)</li>`
+		if (items[i][j][index_goal]) {
+			// there is a goal, so print it.
+			newListStructure += `<li>${items[i][j][index_itemName]} ($${items[i][j][index_goal]}): $${items[i][j][index_value]}</li>`;
+		} else {
+			// there is no goal, so don't print it.
+			newListStructure += `<li>${items[i][j][index_itemName]}: $${items[i][j][index_value]}</li>`;
+		}
+			
+	}
+}
+	
 
 newList.innerHTML = newListStructure;
 
