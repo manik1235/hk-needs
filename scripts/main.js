@@ -44,6 +44,13 @@ newListStructure += '</p>'
 
 
 var newList = document.getElementById('lists');
+// var changeNameButton;
+
+function changeName() {
+	// prompts the user for a new item name. (Blank to delete it?)
+	prompt('What would you like to rename this item?\n\nBlank to delete it.');
+	
+}
 
 newListStructure = ''
 // Loop through the frameworks
@@ -53,12 +60,22 @@ for (var i = 0; i < names.length; i++) {
 	newListStructure += '<ol>'
 	// Create the list items
 	for (var j = 0; j < items[i].length; j++) {
+		newListStructure += '<li>';
+		// Write a button that contains the code it needs to call
+		// the correct function to move the indexes up or down.
+		// Or whatever function makes sense.
+		//changeName();
+		newListStructure += `<button name='buttonName${names[i]}${j}'>Name</button> `;
+		
+		
+		// *** This will not work. the button hasn't been created yet!
+		document.getElementsByName(`buttonName${names[i]}${j}`).onclick = changeName;
 		if (items[i][j][index_goal]) {
 			// there is a goal, so print it.
-			newListStructure += `<li>${items[i][j][index_itemName]} ($${items[i][j][index_goal]}): $${items[i][j][index_value]}</li>`;
+			newListStructure += `${items[i][j][index_itemName]} ($${items[i][j][index_goal]}): $${items[i][j][index_value]}</li>`;
 		} else {
 			// there is no goal, so don't print it.
-			newListStructure += `<li>${items[i][j][index_itemName]}: $${items[i][j][index_value]}</li>`;
+			newListStructure += `${items[i][j][index_itemName]}: $${items[i][j][index_value]}</li>`;
 		}
 			
 	}
