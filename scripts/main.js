@@ -23,3 +23,7 @@ items[index_andrew] = ['Available', 80, null, null, 'Haircut', 0, 30, null, 'Dre
 items[index_aydan] = ['Available', 0, null, null, 'Senior Trip 2019', 10, 200, null, 'Movie Ticket', 20, 60, null];
 items[index_arthur] = ['Available', 125, null, null, 'Pants', 0, 40, null];
 items[index_household] = ['Available', 100, null, null, 'Paint, LR', 0, 30, '2018-04-07', 'TV Mount', 0, 30, '2018-03-01'];
+
+
+// Create the framework for the list items
+document.write('document written!');
