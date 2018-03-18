@@ -30,8 +30,8 @@ items[index_arthur] = [['Available', 125, null, null], ['Pants', 0, 40, null]];
 items[index_household] = [['Available', 100, null, null], ['Paint, LR', 0, 30, '2018-04-07'], ['TV Mount', 0, 30, '2018-03-01']];
 
 
+/* this is really just the template.
 // Create the framework for the list items
-var newList = document.getElementById('lists');
 var newListStructure = ''
 newListStructure += '<p>'
 newListStructure += '<p class="name">Traci</p>'
@@ -40,8 +40,10 @@ newListStructure += '<li class="available" id="Traci.Available">Available $10</l
 newListStructure += '<li>Spring Coat ($50)</li>'
 newListStructure += '</ol>'
 newListStructure += '</p>'
+*/
 
 
+var newList = document.getElementById('lists');
 
 newListStructure = ''
 // Loop through the frameworks
@@ -64,7 +66,6 @@ for (var i = 0; i < names.length; i++) {
 	newListStructure += '</ol>'
 	newListStructure += '</p>'
 }
-	
 
 newList.innerHTML = newListStructure;
 
