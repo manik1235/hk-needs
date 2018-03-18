@@ -26,4 +26,17 @@ items[index_household] = ['Available', 100, null, null, 'Paint, LR', 0, 30, '201
 
 
 // Create the framework for the list items
-document.write('document written!');
+var newList = document.getElementById('lists');
+var newListStructure = ''
+newListStructure += '<p>'
+newListStructure += '<p class="name">Traci</p>'
+newListStructure += '<ol>'
+newListStructure += '<li class="available" id="Traci.Available">Available $10</li>'
+newListStructure += '<li>Spring Coat ($50)</li>'
+newListStructure += '</ol>'
+newListStructure += '</p>'
+
+newList.innerHTML = newListStructure;
+
+// Indicates no errors above this.
+document.write('Script was successful to the end.');
