@@ -18,11 +18,11 @@ names[index_household] = 'Household';
 // array structure is [person#1, person#2]
 // then the sub arrays are ["Item Name", value, goal, completion-goal-date]
 var items = [];
-items[index_traci] = ['Available', 80, null, null, 'Dresses', 0, 100, null, 'Spring Coat', 0, 60, null];
-items[index_andrew] = ['Available', 80, null, null, 'Haircut', 0, 30, null, 'Dress Shirts', 0, 40, null, 'Ties', 0, 30, null];
-items[index_aydan] = ['Available', 0, null, null, 'Senior Trip 2019', 10, 200, null, 'Movie Ticket', 20, 60, null];
-items[index_arthur] = ['Available', 125, null, null, 'Pants', 0, 40, null];
-items[index_household] = ['Available', 100, null, null, 'Paint, LR', 0, 30, '2018-04-07', 'TV Mount', 0, 30, '2018-03-01'];
+items[index_traci] = [['Available', 80, null, null], ['Dresses', 0, 100, null], ['Spring Coat', 0, 60, null]];
+items[index_andrew] = [['Available', 80, null, null], ['Haircut', 0, 30, null], ['Dress Shirts', 0, 40, null], ['Ties', 0, 30, null]];
+items[index_aydan] = [['Available', 0, null, null], ['Senior Trip 2019', 10, 200, null], ['Movie Ticket', 20, 60, null]];
+items[index_arthur] = [['Available', 125, null, null], ['Pants', 0, 40, null]];
+items[index_household] = [['Available', 100, null, null], ['Paint, LR', 0, 30, '2018-04-07'], ['TV Mount', 0, 30, '2018-03-01']];
 
 
 // Create the framework for the list items
@@ -35,6 +35,19 @@ newListStructure += '<li class="available" id="Traci.Available">Available $10</l
 newListStructure += '<li>Spring Coat ($50)</li>'
 newListStructure += '</ol>'
 newListStructure += '</p>'
+
+
+
+newListStructure = ''
+// Loop through the frameworks
+for (var i = 0; i < names.length; i++) {
+	newListStructure += '<p>'
+	newListStructure += `<p class="name">${names[i]}</p>`
+	newListStructure += '<ol>'
+	// Create the list items
+	for (var j = 0; j < items[i].length; j++) {
+		newListStructure += `<li class="available" id="traci.available">Available $${items[i][j]}</li>`
+		newListStructure += `<li>Spring Coat ($50)</li>`
 
 newList.innerHTML = newListStructure;
 
