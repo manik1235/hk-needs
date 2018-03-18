@@ -66,10 +66,6 @@ for (var i = 0; i < names.length; i++) {
 		// Or whatever function makes sense.
 		//changeName();
 		newListStructure += `<button name='buttonName${names[i]}${j}'>Name</button> `;
-		
-		
-		// *** This will not work. the button hasn't been created yet!
-		document.getElementsByName(`buttonName${names[i]}${j}`).onclick = changeName;
 		if (items[i][j][index_goal]) {
 			// there is a goal, so print it.
 			newListStructure += `${items[i][j][index_itemName]} ($${items[i][j][index_goal]}): $${items[i][j][index_value]}</li>`;
@@ -84,7 +80,11 @@ for (var i = 0; i < names.length; i++) {
 	newListStructure += '</p>'
 }
 
+Actually create the code
 newList.innerHTML = newListStructure;
+
+// *** This will not work. the button hasn't been created yet!
+		document.getElementsByName(`buttonName${names[i]}${j}`).onclick = changeName;
 
 // Indicates no errors above this.
 document.write('Script was successful to the end.');
