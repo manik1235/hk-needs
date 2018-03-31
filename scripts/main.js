@@ -80,40 +80,6 @@ for (var i = 0; i < names.length; i++) {
 	newListStructure += '</p>'
 }
 
-
-/*
-newList.innerHTML = ''
-// Loop through the frameworks
-for (var i = 0; i < names.length; i++) {
-	newList.innerHTML += '<p>'
-	newList.innerHTML += `<p class="name">${names[i]}</p>`
-	newList.innerHTML += '<ol>'
-	// Create the list items
-	for (var j = 0; j < items[i].length; j++) {
-		newList.innerHTML += '<li>';
-		// Write a button that contains the code it needs to call
-		// the correct function to move the indexes up or down.
-		// Or whatever function makes sense.
-		//changeName();
-		newList.innerHTML += `<button name='buttonName${names[i]}${j}'>Name</button> `;
-		document.getElementsByName(`buttonName${names[i]}${j}`)[0].onclick = changeName;
-		if (items[i][j][index_goal]) {
-			// there is a goal, so print it.
-			newList.innerHTML += `${items[i][j][index_itemName]} ($${items[i][j][index_goal]}): $${items[i][j][index_value]}`;
-		} else {
-			// there is no goal, so don't print it.
-			newList.innerHTML += `${items[i][j][index_itemName]}: $${items[i][j][index_value]}`;
-		}
-		newList.innerHTML += '</li>';
-	}
-	// Add the list footer
-	newList.innerHTML += '</ol>'
-	newList.innerHTML += '</p>'
-}
-*/
-
-
-
 //Actually create the code
 newList.innerHTML = newListStructure;
 
