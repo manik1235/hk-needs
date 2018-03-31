@@ -32,7 +32,6 @@ items[index_household] = [['Available', 100, null, null], ['Paint, LR', 0, 30, '
 
 /* this is really just the template.
 // Create the framework for the list items
-var newListStructure = ''
 newListStructure += '<p>'
 newListStructure += '<p class="name">Traci</p>'
 newListStructure += '<ol>'
@@ -52,6 +51,7 @@ function changeName() {
 	
 }
 
+var newListStructure = ''
 newListStructure = ''
 // Loop through the frameworks
 for (var i = 0; i < names.length; i++) {
