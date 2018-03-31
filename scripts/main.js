@@ -47,17 +47,18 @@ var newList = document.getElementById('lists');
 
 function changeName() {
 	// prompts the user for a new item name. (Blank to delete it?)
-	prompt('What would you like to rename this item?\n\nBlank to delete it.');
+	var newName = prompt('What would you like to rename this item?\n\nBlank to delete it.');
+	
 	
 }
 
-var newListStructure = ''
-newListStructure = ''
+var newListStructure = '';
+newListStructure = '';
 // Loop through the frameworks
 for (var i = 0; i < names.length; i++) {
-	newListStructure += '<p>'
-	newListStructure += `<p class="name">${names[i]}</p>`
-	newListStructure += '<ol>'
+	newListStructure += '<p>';
+	newListStructure += `<p class="name">${names[i]}</p>`;
+	newListStructure += '<ol>';
 	// Create the list items
 	for (var j = 0; j < items[i].length; j++) {
 		newListStructure += '<li>';
@@ -76,8 +77,8 @@ for (var i = 0; i < names.length; i++) {
 			
 	}
 	// Add the list footer
-	newListStructure += '</ol>'
-	newListStructure += '</p>'
+	newListStructure += '</ol>';
+	newListStructure += '</p>';
 }
 
 //Actually create the code
