@@ -65,13 +65,13 @@ for (var i = 0; i < names.length; i++) {
 		// the correct function to move the indexes up or down.
 		// Or whatever function makes sense.
 		//changeName();
-		newListStructure += `<button name='buttonName${names[i]}${j}'>Name</button> `;
+		newListStructure += `<button name='buttonName${names[i]}${j}'>${items[i][j][index_itemName]}</button> `;
 		if (items[i][j][index_goal]) {
 			// there is a goal, so print it.
-			newListStructure += `${items[i][j][index_itemName]} ($${items[i][j][index_goal]}): $${items[i][j][index_value]}</li>`;
+			newListStructure += `($${items[i][j][index_goal]}): $${items[i][j][index_value]}</li>`;
 		} else {
 			// there is no goal, so don't print it.
-			newListStructure += `${items[i][j][index_itemName]}: $${items[i][j][index_value]}</li>`;
+			newListStructure += `: $${items[i][j][index_value]}</li>`;
 		}
 			
 	}
