@@ -48,7 +48,7 @@ var newList = document.getElementById('lists');
 function changeName() {
 	// prompts the user for a new item name. (Blank to delete it?)
 	var newName = prompt('What would you like to rename this item?\n\nBlank to delete it.');
-	
+	alert(newName);
 	
 }
 
