@@ -82,11 +82,9 @@ for (var i = 0; i < names.length; i++) {
 		newListStructure += `<button name='buttonName${names[i]}${j}'>${items[i][j][index_itemName]}</button> `;
 		if (items[i][j][index_goal]) {
 			// there is a goal, so print it.
-			newListStructure += `<button name='buttonGoal${names[i]}${j}'>($${items[i][j][index_goal]})</button>: $${items[i][j][index_value]}</li>`;
-		} else {
-			// there is no goal, so don't print it.
-			newListStructure += `: $${items[i][j][index_value]}</li>`;
+			newListStructure += `<button name='buttonGoal${names[i]}${j}'>($${items[i][j][index_goal]})</button>`;
 		}
+		newListStructure += `: $${items[i][j][index_value]}</li>`;
 			
 	}
 	// Add the list footer
