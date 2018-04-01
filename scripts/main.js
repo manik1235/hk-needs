@@ -57,12 +57,12 @@ function changeName(id1, id2) {
 	console.log(newName);
 	console.log(id1);
 	console.log(id2);
-	console.log(this.name)
+	//console.log(this.name);
 	
 	// Get the element by name, and change it's text to the newly entered stuff
-	document.getElementByName(this.name).innerHTML = newName;
+	document.getElementsByName(this.name)[0].innerHTML = newName;
 
-	return newName;
+	//return newName;
 }
 
 var newListStructure = '';
