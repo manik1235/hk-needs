@@ -62,7 +62,6 @@ function changeName(id1, id2) {
 	// Get the element by name, and change it's text to the newly entered stuff
 	document.getElementsByName(this.name)[0].innerHTML = newName;
 
-	//dev
 	//return newName;
 }
 
@@ -83,7 +82,7 @@ for (var i = 0; i < names.length; i++) {
 		newListStructure += `<button name='buttonName${names[i]}${j}'>${items[i][j][index_itemName]}</button> `;
 		if (items[i][j][index_goal]) {
 			// there is a goal, so print it.
-			newListStructure += `($${items[i][j][index_goal]}): $${items[i][j][index_value]}</li>`;
+			newListStructure += `<button name='buttonGoal${names[i]}${j}'>($${items[i][j][index_goal]})</button>: $${items[i][j][index_value]}</li>`;
 		} else {
 			// there is no goal, so don't print it.
 			newListStructure += `: $${items[i][j][index_value]}</li>`;
