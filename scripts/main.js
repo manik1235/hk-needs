@@ -54,21 +54,25 @@ var newList = document.getElementById('lists');
 function changeName(id1, id2) {
 	// prompts the user for a new item name. (Blank to delete it?)
 	var newName = prompt('What would you like to rename this item?\n\nBlank to delete it.');
-	/*
-	alert(newName);
-	alert(id1);
-	alert(id2);
-	alert(this.name);
-	*/
-	console.log(newName);
-	console.log(id1);
-	console.log(id2);
-	//console.log(this.name);
-	
+
 	// Get the element by name, and change it's text to the newly entered stuff
 	document.getElementsByName(this.name)[0].innerHTML = newName;
+}
 
-	//return newName;
+function changeGoal() {
+	// prompts the user for a new item goal amount.
+	var newName = prompt('How much do you want to save for this goal?');
+	
+	// Get the element by name, and change it's text to the newly entered stuff
+	document.getElementsByName(this.name)[0].innerHTML = '($' + newName + ')';
+}
+
+function changeValue() {
+	// prompts the user for a new amount saved.
+	var newName = prompt('How much are you saving toward this goal?');
+	
+	// Get the element by name, and change it's text to the newly entered stuff
+	document.getElementsByName(this.name)[0].innerHTML = '$' + newName;
 }
 
 var newListStructure = '';
@@ -90,7 +94,7 @@ for (var i = 0; i < names.length; i++) {
 			// there is a goal, so print it.
 			newListStructure += `<button name='buttonGoal${names[i]}${j}'>($${items[i][j][index_goal]})</button>`;
 		}
-		newListStructure += `: $${items[i][j][index_value]}</li>`;
+		newListStructure += `: <button name='buttonValue${names[i]}${j}'>$${items[i][j][index_value]}</button></li>`;
 			
 	}
 	// Add the list footer
@@ -105,8 +109,28 @@ newList.innerHTML = newListStructure;
 // Loop through all the buttons again to add the function.
 for (var i = 0; i < names.length; i++) {
 	for (var j = 0; j < items[i].length; j++) {
-		var thisButton = document.getElementsByName(`buttonName${names[i]}${j}`)[0]
-		thisButton.onclick = changeName;
+		try {
+			var thisButton = document.getElementsByName(`buttonName${names[i]}${j}`)[0]
+			thisButton.onclick = changeName;
+		}
+		catch(err) {
+			console.log(`Can't find buttonName${names[i]}${j}`);
+		}
+		try {
+			var thisButton = document.getElementsByName(`buttonGoal${names[i]}${j}`)[0]
+			thisButton.onclick = changeGoal;
+		}
+		catch(err) {
+			console.log(`Can't find buttonGoal${names[i]}${j}`);
+		}
+		try {
+			var thisButton = document.getElementsByName(`buttonValue${names[i]}${j}`)[0]
+			thisButton.onclick = changeValue;
+		}
+		
+		catch(err) {
+			console.log(`Can't find buttonValue${names[i]}${j}`);
+		}
 	}
 }
 	
