@@ -45,11 +45,12 @@ newListStructure += '</p>'
 var newList = document.getElementById('lists');
 // var changeNameButton;
 
-function changeName() {
+function changeName(id) {
 	// prompts the user for a new item name. (Blank to delete it?)
 	var newName = prompt('What would you like to rename this item?\n\nBlank to delete it.');
 	alert(newName);
-	
+	alert(id);
+	return newName;
 }
 
 var newListStructure = '';
