@@ -62,6 +62,7 @@ function changeName(id1, id2) {
 	// Get the element by name, and change it's text to the newly entered stuff
 	document.getElementsByName(this.name)[0].innerHTML = newName;
 
+	//dev
 	//return newName;
 }
 
