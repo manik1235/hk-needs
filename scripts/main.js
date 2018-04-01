@@ -45,11 +45,17 @@ newListStructure += '</p>'
 var newList = document.getElementById('lists');
 // var changeNameButton;
 
-function changeName(id) {
+function changeName(id1, id2) {
 	// prompts the user for a new item name. (Blank to delete it?)
 	var newName = prompt('What would you like to rename this item?\n\nBlank to delete it.');
 	alert(newName);
-	alert(id);
+	alert(id1);
+	alert(id2);
+	alert(this.name);
+	console.log(newName);
+	console.log(id1);
+	console.log(id2);
+	console.log(this.name)
 	return newName;
 }
 
@@ -89,7 +95,8 @@ newList.innerHTML = newListStructure;
 // Loop through all the buttons again to add the function.
 for (var i = 0; i < names.length; i++) {
 	for (var j = 0; j < items[i].length; j++) {
-		document.getElementsByName(`buttonName${names[i]}${j}`)[0].onclick = changeName;
+		var thisButton = document.getElementsByName(`buttonName${names[i]}${j}`)[0]
+		thisButton.onclick = changeName;
 	}
 }
 	
