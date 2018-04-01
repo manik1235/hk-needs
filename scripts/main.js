@@ -1,3 +1,9 @@
+/* Andrew Henning-Kolberg
+   andrew.kolberg@gmail.com
+   2018
+   
+*/
+
 // set the current values for each person
 // set indexes for the array
 var index_traci = 0;
