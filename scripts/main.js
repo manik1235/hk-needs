@@ -28,6 +28,8 @@ var index_value = 1;
 var index_goal = 2;
 var index_completionDate = 3;
 
+// Structure: 
+// items[name][item and data][element]
 var items = [];
 items[index_traci] = [['Available', 80, null, null], ['Dresses', 0, 100, null], ['Spring Coat', 0, 60, null]];
 items[index_andrew] = [['Available', 80, null, null], ['Haircut', 0, 30, null], ['Dress Shirts', 0, 40, null], ['Ties', 0, 30, null]];
@@ -53,9 +55,13 @@ var newList = document.getElementById('lists');
 
 function updateDisplay() {
 	// if the button's name has changed, update it.
+	// Loop through each button.
+	// How is a particular button attached to the stuff?
+	// Would it be better with 'id's or perhaps a single array? no that would be hard to insert...
 	var allVariableButtons = document.getElementsByClassName('variableButton')
 	for (b of allVariableButtons) {
 		
+		b.innerHTML = items[i][j][k % 3]
 	
 	
 	
