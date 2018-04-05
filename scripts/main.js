@@ -61,18 +61,22 @@ function changeName(id1, id2) {
 
 function changeGoal() {
 	// prompts the user for a new item goal amount.
-	var newName = prompt('How much do you want to save for this goal?');
+	var newGoal = prompt('How much do you want to save for this goal?');
 	
 	// Get the element by name, and change it's text to the newly entered stuff
-	document.getElementsByName(this.name)[0].innerHTML = '($' + newName + ')';
+	document.getElementsByName(this.name)[0].innerHTML = '($' + newGoal + ')';
 }
 
 function changeValue() {
 	// prompts the user for a new amount saved.
-	var newName = prompt('How much are you saving toward this goal?');
+	var newValue = prompt('How much are you saving toward this goal?');
+	
+	// Validate that the new value amount is available, 
+	// and adjust the amount 
 	
 	// Get the element by name, and change it's text to the newly entered stuff
-	document.getElementsByName(this.name)[0].innerHTML = '$' + newName;
+	document.getElementsByName(this.name)[0].innerHTML = '$' + newValue;
+	updateDisplay();
 }
 
 var newListStructure = '';
