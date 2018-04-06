@@ -29,7 +29,7 @@ var index_goal = 2;
 var index_completionDate = 3;
 
 var items = [];
-items[index_traci] = [['Available', 80, null, null], ['Dresses', 0, 100, null], ['Spring Coat', 0, 60, null]];
+items[index_traci] = [['Available', 20, 80, null], ['Dresses', 10, 100, null], ['Spring Coat', 50, 60, null]];
 items[index_andrew] = [['Available', 80, null, null], ['Haircut', 0, 30, null], ['Dress Shirts', 0, 40, null], ['Ties', 0, 30, null]];
 items[index_aydan] = [['Available', 0, null, null], ['Senior Trip 2019', 10, 200, null], ['Movie Ticket', 20, 60, null]];
 items[index_arthur] = [['Available', 125, null, null], ['Pants', 0, 40, null]];
