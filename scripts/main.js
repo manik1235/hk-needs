@@ -28,6 +28,8 @@ var index_value = 1;
 var index_goal = 2;
 var index_completionDate = 3;
 
+// Structure: 
+// items[name][item and data][element]
 var items = [];
 items[index_traci] = [['Available', 20, 80, null], ['Dresses', 10, 100, null], ['Spring Coat', 50, 60, null]];
 items[index_andrew] = [['Available', 80, null, null], ['Haircut', 0, 30, null], ['Dress Shirts', 0, 40, null], ['Ties', 0, 30, null]];
@@ -51,12 +53,29 @@ newListStructure += '</p>'
 var newList = document.getElementById('lists');
 // var changeNameButton;
 
-function changeName(id1, id2) {
+function updateDisplay() {
+	// if the button's name has changed, update it.
+	// Loop through each button.
+	// How is a particular button attached to the stuff?
+	// Would it be better with 'id's or perhaps a single array? no that would be hard to insert...
+	var allVariableButtons = document.getElementsByClassName('variableButton')
+	for (b of allVariableButtons) {
+		
+		b.innerHTML = items[i][j][k % 3]
+	
+	
+	
+	document.getElementsByName(this.name)[0].innerHTML = newName;
+	document.getElementsByName(this.name)[0].innerHTML = '($' + newGoal + ')';
+	document.getElementsByName(this.name)[0].innerHTML = '$' + newValue;
+}
+
+function changeName() {
 	// prompts the user for a new item name. (Blank to delete it?)
 	var newName = prompt('What would you like to rename this item?\n\nBlank to delete it.');
 
 	// Get the element by name, and change it's text to the newly entered stuff
-	document.getElementsByName(this.name)[0].innerHTML = newName;
+	updateDisplay();
 }
 
 function changeGoal() {
@@ -64,7 +83,7 @@ function changeGoal() {
 	var newGoal = prompt('How much do you want to save for this goal?');
 	
 	// Get the element by name, and change it's text to the newly entered stuff
-	document.getElementsByName(this.name)[0].innerHTML = '($' + newGoal + ')';
+	updateDisplay();
 }
 
 function changeValue() {
@@ -75,7 +94,6 @@ function changeValue() {
 	// and adjust the amount 
 	
 	// Get the element by name, and change it's text to the newly entered stuff
-	document.getElementsByName(this.name)[0].innerHTML = '$' + newValue;
 	updateDisplay();
 }
 
@@ -84,7 +102,7 @@ newListStructure = '';
 // Loop through the frameworks
 for (var i = 0; i < names.length; i++) {
 	newListStructure += '<p>';
-	newListStructure += `<p class="name">${names[i]}</p>`;
+	newListStructure += `<p class='name'>${names[i]}</p>`;
 	newListStructure += '<ol>';
 	// Create the list items
 	for (var j = 0; j < items[i].length; j++) {
@@ -92,13 +110,12 @@ for (var i = 0; i < names.length; i++) {
 		// Write a button that contains the code it needs to call
 		// the correct function to move the indexes up or down.
 		// Or whatever function makes sense.
-		//changeName();
-		newListStructure += `<button name='buttonName${names[i]}${j}'>${items[i][j][index_itemName]}</button> `;
+		newListStructure += `<button class='variableButton' name='buttonName${names[i]}${j}'>${items[i][j][index_itemName]}</button> `;
 		if (items[i][j][index_goal]) {
 			// there is a goal, so print it.
-			newListStructure += `<button name='buttonGoal${names[i]}${j}'>($${items[i][j][index_goal]})</button>`;
+			newListStructure += `<button class='variableButton' name='buttonGoal${names[i]}${j}'>($${items[i][j][index_goal]})</button>`;
 		}
-		newListStructure += `: <button name='buttonValue${names[i]}${j}'>$${items[i][j][index_value]}</button></li>`;
+		newListStructure += `: <button class='variableButton' name='buttonValue${names[i]}${j}'>$${items[i][j][index_value]}</button></li>`;
 			
 	}
 	// Add the list footer
